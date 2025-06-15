@@ -51,7 +51,7 @@ if st.session_state.logged_in:
         savings_account = SavingsAccount(user_data["savings"])
         current_account = CurrentAccount(user_data["current"])
 
-        # --- Account Type Section ---
+
         st.markdown("""
         <div style="background-color:#f0f2f6;padding:20px 20px 10px 20px;border-radius:10px;margin-bottom:20px;">
             <h4 style="color:#0a3d62;margin-bottom:10px;">🏦 Choose Account Type</h4>
@@ -63,7 +63,7 @@ if st.session_state.logged_in:
             horizontal=True
         )
 
-        # --- Transaction Options Section ---
+
         st.markdown("""
         <div style="background-color:#f0f2f6;padding:20px 20px 10px 20px;border-radius:10px;margin-bottom:20px;">
             <h4 style="color:#0a3d62;margin-bottom:10px;">💼 Transaction Options</h4>
@@ -76,7 +76,7 @@ if st.session_state.logged_in:
         amount = st.number_input("Enter amount:", min_value=0.0, max_value=500000.0)
 
         if st.button("Submit"):
-            # Remove emoji for logic
+        
             acc_type = "Savings Account" if "Savings" in account_type else "Current Account"
             if acc_type == "Savings Account":
                 if transaction_type == "Deposit":
